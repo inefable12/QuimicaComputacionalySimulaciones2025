@@ -22,6 +22,10 @@ def plot_energy_diagram(reactant, transition, product):
     
     st.pyplot(fig)
 
+    # Cálculo de parámetros cinéticos y termodinámicos
+    cinetica = transition - reactant
+    termodinamica = product - reactant
+    
     st.write(f"Cinética (E_activación): {cinetica} kJ/mol")
     st.write(f"Termodinámica (ΔH): {termodinamica} kJ/mol")
     
