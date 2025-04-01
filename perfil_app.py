@@ -7,7 +7,7 @@ def plot_energy_diagram(reactant, transition, product):
     energies = [reactant, transition, product]
     
     fig, ax = plt.subplots(figsize=(6, 4))
-    ax.plot([0, 1, 2], energies, marker='o', linestyle='-', color='b')
+    ax.plot([0, 1, 2], energies, marker='o', linestyle='--', color='b')
     
     for i, txt in enumerate(energies):
         ax.text(i, energies[i] + 1, f"{txt} kJ/mol", ha='center', fontsize=12)
