@@ -13,7 +13,7 @@ def plot_energy_diagram(reactant, transition, product):
         ax.hlines(y=energy, xmin=pos - 0.2, xmax=pos + 0.2, colors='b', linewidth=4)
         ax.text(pos, energy + 1, f"{energy} kJ/mol", ha='center', fontsize=12)
     
-    #ax.plot([0, 1, 2], energies, marker='o', linestyle='--', color='b')
+    ax.plot(positions, energies, linestyle='--', color='gray', linewidth=1)
     ax.set_xticks(positions)
     ax.set_xticklabels(states)
     ax.set_ylabel('Energía (kJ/mol)')
