@@ -10,8 +10,8 @@ def plot_energy_diagram(reactant, transition, product):
     fig, ax = plt.subplots(figsize=(6, 4))
 
     for pos, energy in zip(positions, energies):
-        ax.hlines(y=energy, xmin=pos - 2, xmax=pos + 2, colors='b', linewidth=4)
-        ax.text(pos, energy + 1, f"{energy} kJ/mol", ha='center', fontsize=12)
+        ax.hlines(y=energy, xmin=pos - 0.2, xmax=pos + 0.2, colors='b', linewidth=4)
+        ax.text(pos, energy + 5, f"{energy} kJ/mol", ha='center', fontsize=12)
     
     ax.plot(positions, energies, linestyle='--', color='gray', linewidth=1)
     ax.set_xticks(positions)
