@@ -22,6 +22,14 @@ def plot_energy_diagram(reactant, transition, product):
     
     st.pyplot(fig)
 
+    st.write(f"Cinética (E_activación): {cinetica} kJ/mol")
+    st.write(f"Termodinámica (ΔH): {termodinamica} kJ/mol")
+    
+    if termodinamica > 0:
+        st.write("La reacción es endotérmica")
+    else:
+        st.write("La reacción es exotérmica")
+
 st.title('Generador de Diagramas de Perfil de Energía')
 
 reactant_energy = st.number_input('Energía del Reactante (kJ/mol)', value=0.0)
