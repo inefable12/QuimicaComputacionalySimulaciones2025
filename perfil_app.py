@@ -5,14 +5,16 @@ import numpy as np
 def plot_energy_diagram(reactant, transition, product):
     states = ['Reactante', 'Estado de Transición', 'Producto']
     energies = [reactant, transition, product]
+    positions = [0, 1, 2]
     
     fig, ax = plt.subplots(figsize=(6, 4))
-    ax.plot([0, 1, 2], energies, marker='o', linestyle='--', color='b')
+
+    for pos, energy in zip(positions, energies):
+        ax.hlines(y=energy, xmin=pos - 0.2, xmax=pos + 0.2, colors='b', linewidth=4)
+        ax.text(pos, energy + 1, f"{energy} kJ/mol", ha='center', fontsize=12)
     
-    for i, txt in enumerate(energies):
-        ax.text(i, energies[i] + 1, f"{txt} kJ/mol", ha='center', fontsize=12)
-    
-    ax.set_xticks([0, 1, 2])
+    #ax.plot([0, 1, 2], energies, marker='o', linestyle='--', color='b')
+    ax.set_xticks(positions)
     ax.set_xticklabels(states)
     ax.set_ylabel('Energía (kJ/mol)')
     ax.set_title('Diagrama de Perfil de Energía')
